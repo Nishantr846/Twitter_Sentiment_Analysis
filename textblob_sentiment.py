@@ -44,6 +44,7 @@ def get_sentiment(text):
 
 def fetch_tweets(query, count=10):
     """Fetches tweets using Twitter API v2."""
+    count = max(count, 10)
     try:
         response = client.search_recent_tweets(query=query, max_results=count, tweet_fields=["text"])
         if response.data:
@@ -53,6 +54,7 @@ def fetch_tweets(query, count=10):
     except tweepy.TweepyException as e:
         st.error(f"Error fetching tweets from Twitter API: {e}")
         return []
+
 
 # Streamlit UI
 st.title("Twitter Sentiment Analysis")
