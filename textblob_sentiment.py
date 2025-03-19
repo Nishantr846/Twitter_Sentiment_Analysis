@@ -62,7 +62,7 @@ st.write("Enter a topic to fetch recent tweets and analyze sentiment.")
 
 # User input
 query = st.text_input("Enter a topic or keyword", "Twitter")
-tweet_count = st.slider("Number of tweets to fetch", min_value=5, max_value=50, value=10)
+tweet_count = st.slider("Number of tweets to fetch", min_value=10, max_value=50, value=10)
 
 if st.button("Analyze Sentiment"):
     if query.strip():
